@@ -1,0 +1,13 @@
+# @package _global_
+dataset:
+  _target_: src.data.SyntheticCurthVDS
+  name: synthetic_curth
+  collection: False
+  train_test_splitted: True
+  oracle_available: True
+  test_size: 0.15
+  n_shuffle_splits:            # not applicable
+  n_samples_train: 500
+  n_samples_test: ${dataset.n_samples_train}
+
+  dim_cov: 25

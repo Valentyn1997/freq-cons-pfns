@@ -1,0 +1,7 @@
+# @package _global_
+dataset:
+  _target_: src.data.IHDP  # Will be dynamically instantiated
+  name: ihdp
+  collection: True
+  train_test_splitted: True
+  dim_cov: 25

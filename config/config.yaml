@@ -1,0 +1,37 @@
+# Dataset for training / evaluation -- specific values should be filled for each dataset
+dataset:
+  collection: ???                   # True for ihdp
+  train_test_splitted: ???
+  test_size: 0.2                    # train/test split ratio
+  n_shuffle_splits: 1
+  dataset_ix:                       # dataset index for ihdp
+  normalize_cov: True
+
+
+outcome_pfn:
+  _target_: src.models.pfns.OutcomePFN
+  backbone: tabpfn                  # tabpfn | causalpfn | dopfn
+  learner_type: s
+
+prop_pfn:
+  _target_: src.models.pfns.PropensityPFN
+  backbone: tabpfn                  # tabpfn | causalpfn | dopfn
+
+mp_wrapper:
+
+
+ate_estimation:
+  q_trunc: 0.05
+
+exp:
+  seed: 10
+  device: cuda
+  logging: True                     # Logging to MlFlow
+  mlflow_uri: http://127.0.0.1:5000 # MlFlow server is located on
+  num_post_samples: 100
+
+# Hydra defaults
+defaults:
+  - _self_
+  - override hydra/hydra_logging: colorlog
+  - override hydra/job_logging: colorlog

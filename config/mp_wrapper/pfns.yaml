@@ -1,0 +1,5 @@
+# @package _global_
+mp_wrapper:
+  _target_: src.models.mp_wrapper.PFNsMartingalePosteriorWrapper
+  name: mp_pfns
+  mp_steps: 50

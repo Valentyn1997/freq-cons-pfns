@@ -1,0 +1,8 @@
+# @package _global_
+mp_wrapper:
+  _target_: src.models.mp_wrapper.CopulaMartingalePosteriorWrapper
+  name: mp_copulas
+  mp_steps: 100
+  rho: 0.5
+  reduce_grid: 20
+  mode: natural
